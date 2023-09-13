@@ -38,11 +38,15 @@ def convert_mov_to_mp4(mov_file_path):
     video_clip.close()
     return mp4_path
 
-st.title("Photo & Video Metadata Viewer")
-st.write("Upload your photos and videos and see their metadata.")
+st.title("Photo Test Viewer")
+#st.write("Upload your photos and videos and see their metadata.")
 
 # File uploader
-uploaded_file = st.file_uploader("Choose a photo or video...", type=["jpg", "jpeg", "png", "mp4", "mov"])
+#uploaded_file = st.file_uploader("Choose a photo or video...", type=["jpg", "jpeg", "png", "mp4", "mov"])
+
+#camera input - ska funka även med iPhone Kameran
+uploaded_file = st.camera_input(label="ProbeTest", key="camera_input_file")
+
 
 if uploaded_file is not None:
     # Create a temporary file to save the uploaded content
