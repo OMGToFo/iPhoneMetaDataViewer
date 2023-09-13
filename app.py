@@ -46,7 +46,12 @@ st.title("Photo Test Viewer")
 
 #camera input - ska funka även med iPhone Kameran
 uploaded_file = st.camera_input(label="ProbeTest", key="camera_input_file")
-
+if uploaded_file is not None:
+    # To read image file buffer as bytes:
+    bytes_data = uploaded_file.getvalue()
+    # Check the type of bytes_data:
+    # Should output: <class 'bytes'>
+    st.write(type(bytes_data))  
 
 if uploaded_file is not None:
     # Create a temporary file to save the uploaded content
